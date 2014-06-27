@@ -113,7 +113,7 @@
       xcopy /ecyi artifacts\Release\projects\Microsoft.AspNet.SignalR.LoadTestHarness \\{server-01}\perftestbits\www
     </command>
     <command name="SetupIIS" wait="Exit">
-      powershell -executionpolicy remotesigned -command "{bin}\RegisterIIS.ps1 {currentdir}\www"
+      powershell -executionpolicy bypass -command "{bin}\RegisterIIS.ps1 {currentdir}\www"
     </command>
     <command name="SimpleEchoHub-External-LongPolling" wait="Exit">
       Microsoft.AspNet.SignalR.Stress.exe /Run:SimpleEchoHub /Transport:LongPolling /Senders:5 /Connections:5 /Host:External /Url:http://{server-01}:81
