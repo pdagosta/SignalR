@@ -110,7 +110,7 @@
       if not exist c:\perftestbits\www md c:\perftestbits\www
     </command>
     <command name="CopyWWW" wait="Exit">
-      {bin}\xcopy /ecyi artifacts\Release\projects\Microsoft.AspNet.SignalR.LoadTestHarness \\{server-01}\perftestbits\www
+      xcopy /ecyi artifacts\Release\projects\Microsoft.AspNet.SignalR.LoadTestHarness \\{server-01}\perftestbits\www
     </command>
     <command name="SetupIIS" wait="Exit">
       powershell -executionpolicy remotesigned -command "{bin}\RegisterIIS.ps1 {currentdir}\www"
