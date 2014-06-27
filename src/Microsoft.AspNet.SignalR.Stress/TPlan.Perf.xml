@@ -106,6 +106,9 @@
     </command>
 
     <!-- External host-->
+    <command name="CreateWWWDir" wait="Exit">
+      if not exist c:\perftestbits\www md c:\perftestbits\www
+    </command>
     <command name="CopyWWW" wait="Exit">
       {bin}\xcopy /ecyi artifacts\Release\projects\Microsoft.AspNet.SignalR.LoadTestHarness \\{server-01}\perftestbits\www
     </command>
@@ -145,6 +148,7 @@
     <run command="RedisMessageBus" role="server-01" output="true" measure="StartAndStop" />
 
     <!--External host hub tests-->
+    <run command="CreateWWWDir" role="server-01" output="false" />
     <run command="CopyWWW" role="controller" output="true" />
     <run command="SetupIIS" role="server-01" output="true" />
     <run command="SimpleEchoHub-External-LongPolling" role="client-01" output="true" measure="StartAndStop" />
