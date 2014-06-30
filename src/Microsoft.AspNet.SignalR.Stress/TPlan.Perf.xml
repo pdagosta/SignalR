@@ -110,7 +110,7 @@
       if not exist c:\perftestbits\www md c:\perftestbits\www
     </command>
     <command name="CopyWWW" wait="Exit">
-      xcopy /ecyi artifacts\Release\projects\Microsoft.AspNet.SignalR.LoadTestHarness \\{server-01}\perftestbits\www
+      xcopy /ecyi ..\Microsoft.AspNet.SignalR.LoadTestHarness \\{server-01}\perftestbits\www
     </command>
     <command name="SetupIIS" wait="Exit">
       powershell -executionpolicy bypass -command "{bin}\RegisterIIS.ps1 {currentdir}\www"
