@@ -106,12 +106,12 @@
     </command>
 
     <!-- External host-->
-    <command name="CreateWWWDir" wait="Exit">
+    <!--<command name="CreateWWWDir" wait="Exit">
       if not exist c:\perftestbits\www md c:\perftestbits\www
     </command>
     <command name="CopyWWW" wait="Exit">
       xcopy /ecyi ..\Microsoft.AspNet.SignalR.LoadTestHarness \\{server-01}\perftestbits\www
-    </command>
+    </command>-->
     <command name="SetupIIS" wait="Exit">
       powershell -executionpolicy bypass -command "{bin}\RegisterIIS.ps1 {currentdir}\www"
     </command>
