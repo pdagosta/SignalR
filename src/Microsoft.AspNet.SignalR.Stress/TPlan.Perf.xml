@@ -6,7 +6,7 @@
     <!-- Connection Based Tests -->
     <trackingVariation name="ConnectionRun">
       <metric name="Message Bus Messages Received/Sec" selection="Average" units="Numeric">
-        <target value="11954417.38" labConfig="XSPPERF8S_WIN8_X64" priority="1" />
+        <target value="11954417.38" labConfig="XSPPERF8S_WIN8_X64" priority="2" />
       </metric>
     </trackingVariation>
     <trackingVariation name="SendReceive-Memory-LongPolling">
