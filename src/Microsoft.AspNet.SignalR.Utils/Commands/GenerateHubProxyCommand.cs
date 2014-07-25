@@ -34,12 +34,11 @@ namespace Microsoft.AspNet.SignalR.Utils
 
         public override void Execute(string[] args)
         {
-            bool absolute = false;
             string path = null;
             string outputPath = null;
             string url = null;
 
-            ParseArguments(args, out url, out absolute, out path, out outputPath);
+            ParseArguments(args, out url, out path, out outputPath);
 
             if (String.IsNullOrEmpty(outputPath))
             {
@@ -102,9 +101,8 @@ namespace Microsoft.AspNet.SignalR.Utils
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1307:SpecifyStringComparison", MessageId = "System.String.StartsWith(System.String)", Justification = "All starts with methods are SignalR/networking terms.  Will not change via localization.")]
-        private static void ParseArguments(string[] args, out string url, out bool absolute, out string path, out string outputPath)
+        private static void ParseArguments(string[] args, out string url, out string path, out string outputPath)
         {
-            absolute = false;
             path = null;
             url = null;
             outputPath = null;
@@ -119,9 +117,6 @@ namespace Microsoft.AspNet.SignalR.Utils
                 KeyValuePair<string, string> arg = ParseArg(a);
                 switch (arg.Key)
                 {
-                    case "absolute":
-                        absolute = true;
-                        break;
                     case "path":
                         path = arg.Value;
                         break;
